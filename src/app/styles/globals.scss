@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "variables/global.scss";
+
+body {
+  font-size: 14px;
+  background-color: #7f9172;
+}

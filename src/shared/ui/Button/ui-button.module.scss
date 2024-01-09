@@ -1,0 +1,28 @@
+.button {
+  min-width: 80px;
+  border-radius: 5px;
+  min-height: 30px;
+  &:hover {
+    opacity: 0.5;
+  }
+}
+.disabled {
+  opacity: 0.2;
+  cursor: not-allowed;
+  &:hover {
+    opacity: 0.2;
+  }
+}
+.primary {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+}
+.secondary {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+}
+.outline {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  outline: auto;
+}
