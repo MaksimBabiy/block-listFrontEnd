@@ -1,15 +1,14 @@
 .input {
   border: 0;
-  border-bottom: 2px solid var(--secondary-color);
+  border-bottom: 2px solid black;
   outline: 0;
   padding: 5px 0px;
   font-size: 14px;
-  color: var(--primary-color);
-
+  color: black;
   background: transparent;
   transition: border-color 0.2s;
   &::placeholder {
-    color: var(--primary-color);
+    color: black;
   }
 }
 .textField {

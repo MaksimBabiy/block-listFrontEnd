@@ -2,6 +2,7 @@ import { classnames } from "@/shared/helpers/classnames";
 import React, {
   HTMLInputTypeAttribute,
   InputHTMLAttributes,
+  PropsWithRef,
   useId,
 } from "react";
 import cls from "./ui-text-field.module.scss";
@@ -10,6 +11,7 @@ type Props = InputHTMLAttributes<HTMLInputElement> & {
   label?: string;
   error?: string;
   type: Omit<HTMLInputTypeAttribute, "select">;
+  inputProps?: PropsWithRef<InputHTMLAttributes<HTMLInputElement>>;
 };
 
 function UITextField({
@@ -17,14 +19,14 @@ function UITextField({
   error,
   placeholder,
   type = "text",
-  ...props
+  inputProps,
 }: Props) {
   return (
     <div className={classnames(cls.textField, {}, [className])}>
       <input
         placeholder={placeholder}
         className={cls.input}
-        {...props}
+        {...inputProps}
         type={type}
       />
       {error && <span className={cls.error}>{error}</span>}
