@@ -7,7 +7,7 @@
 import { createInstance } from "./api-instance";
 import type { BodyType } from "./api-instance";
 export type BlockListControllerGetListParams = {
-  q?: string;
+  q: string;
 };
 
 export type AddBlockItemDtoType =

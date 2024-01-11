@@ -13,9 +13,5 @@ export const useSessionQuery = () => {
 
 export const useResetSession = () => {
   const queryClient = useQueryClient();
-  return () =>
-    queryClient.removeQueries({
-      queryKey: [QueryKeys.SESSION],
-      exact: true,
-    });
+  return () => queryClient.removeQueries();
 };

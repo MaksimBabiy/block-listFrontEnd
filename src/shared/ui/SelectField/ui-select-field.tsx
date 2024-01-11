@@ -1,5 +1,5 @@
 import { classnames } from "@/shared/helpers/classnames";
-import React, { InputHTMLAttributes, useId } from "react";
+import React, { InputHTMLAttributes, PropsWithRef, useId } from "react";
 import cls from "./ui-select-field.module.scss";
 
 type data = {
@@ -11,29 +11,13 @@ type Props = InputHTMLAttributes<HTMLSelectElement> & {
   label?: string;
   error?: string;
   data: data[];
-  onChange?: () => void;
+  inputProps?: PropsWithRef<InputHTMLAttributes<HTMLSelectElement>>;
 };
 
-function UISelectField({
-  data,
-  className,
-  error,
-  placeholder,
-  onChange,
-  ...props
-}: Props) {
-  const handleSelect = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    return e.target.value;
-  };
-  console.log(data.map((el) => console.log(el)));
+function UISelectField({ data, className, error, inputProps }: Props) {
   return (
     <div className={classnames("", {}, [className])}>
-      <select
-        {...props}
-        onChange={handleSelect}
-        defaultValue="default"
-        className={cls.select}
-      >
+      <select {...inputProps} defaultValue="default" className={cls.select}>
         <option disabled={true} value="default">
           --Choose and option--
         </option>
